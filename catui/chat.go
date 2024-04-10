@@ -21,8 +21,8 @@ func InitScreen() {
 	fmt.Println("Init")
 }
 
-func Say(toSay string, cat *Cat) {
-	fmt.Printf("%s says: %s\n", cat.Name, toSay)
+func (cat Cat) Say(toSay string) {
+	fmt.Printf("%s: %s\n", cat.Name, toSay)
 }
 
 func Read() string {
