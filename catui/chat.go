@@ -22,7 +22,7 @@ func InitScreen() {
 }
 
 func (cat Cat) Say(toSay string) {
-	fmt.Printf("%s says: %s\n", cat.Name, toSay)
+	fmt.Printf("%s: %s\n", cat.Name, toSay)
 }
 
 func Read() string {
