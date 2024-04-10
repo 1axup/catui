@@ -8,11 +8,13 @@ import (
 
 func main() {
 	fmt.Println("Hello, Go!")
+
 	cat1 := catui.Cat{
 		Name:  "Kitty",
-		Icon:  "ca1",
+		Icon:  "cat1",
 		IsBot: false,
 	}
-	catui.Say("Hello, Kitty!", &cat1)
-	fmt.Println(catui.Read())
+
+	cat1.Say("Hello, Kitty!")
+	//fmt.Println(catui.Read())
 }
