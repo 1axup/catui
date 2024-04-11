@@ -1,21 +1,17 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/1axup/catui/catui"
 )
 
 func main() {
-	fmt.Println("Hello, Go!")
-
 	cat1 := catui.Cat{
 		Name:  "Kitty",
 		Icon:  "cat1",
 		IsBot: false,
 	}
 
-	cat1.Say("Hello, Kitty!")
-	//fmt.Println(catui.Read())
-	cat1.Meow()
+	cat1.Say("Hello,\nKitty friend!\nLorem ipsum")
+	//fmt.Println(catui.Read()) // find read multi line
+	//cat1.Meow()
 }
