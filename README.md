@@ -1,6 +1,6 @@
 # catui
 
-Chat TUI interface for Go Projects
+Chat TUI interface for Go Projects with cats
 
 ## Current usage
 
