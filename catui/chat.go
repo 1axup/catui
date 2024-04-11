@@ -21,6 +21,18 @@ func InitScreen() {
 	fmt.Println("Init")
 }
 
+func (cat Cat) Meow() {
+	fmt.Println(" /--------------\\")
+	fmt.Println(" | Hello Friend |")
+	fmt.Println(" \\--------------/")
+	fmt.Println("  \\ ")
+	fmt.Println("   \\ ")
+	fmt.Println("    /\\___/\\")
+	fmt.Println("   /       \\")
+	fmt.Println("   | * . * | ")
+	fmt.Println("   \\_______/")
+}
+
 func (cat Cat) Say(toSay string) {
 	fmt.Printf("%s: %s\n", cat.Name, toSay)
 }

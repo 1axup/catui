@@ -17,4 +17,5 @@ func main() {
 
 	cat1.Say("Hello, Kitty!")
 	//fmt.Println(catui.Read())
+	cat1.Meow()
 }
