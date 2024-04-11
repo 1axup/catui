@@ -11,7 +11,12 @@ func main() {
 		IsBot: false,
 	}
 
+	bot1 := catui.Cat{
+		Name:  "Botti",
+		Icon:  "bot1",
+		IsBot: true,
+	}
+
 	cat1.Say("Hello,\nKitty friend!\nLorem ipsum")
-	//fmt.Println(catui.Read()) // find read multi line
-	//cat1.Meow()
+	bot1.Say("Hello,\nBotti friend!\nLorem ipsum")
 }

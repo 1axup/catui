@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 )
 
 func InitCat(isBot bool) Cat {
@@ -26,10 +25,10 @@ func (cat Cat) Meow() {
 	fmt.Println(" /--------\\")
 	fmt.Println(" | Meow! |")
 	fmt.Println(" \\-------/")
-	printCat()
+	PrintCat()
 }
 
-func printCat() {
+func PrintCat() {
 	fmt.Println("  \\ ")
 	fmt.Println("   \\ ")
 	fmt.Println("    /\\___/\\")
@@ -41,33 +40,13 @@ func printCat() {
 func (cat Cat) Say(toSay string) {
 	//fmt.Printf("%s: %s\n", cat.Name, toSay)
 
-	arr := makeBubbleArray(toSay)
-	arr = catify(arr)
+	arr := makeBubbleArray(toSay, cat.getSymbolSize())
+	arr = catify(arr, cat)
 
 	for _, line := range arr {
 		fmt.Println(line)
 	}
-}
-
-func makeBubbleArray(text string) []string {
-
-	textFormatted := []string{}
-
-	unformatted := strings.Split(text, "\n")
-
-	longestCharLen := findLongestLine(unformatted)
-
-	catOffset := 11 // TODO: THIS IS BULLSHIT
-
-	textFormatted = append(textFormatted, getCatOffset(catOffset)+"/"+getLinesToText(longestCharLen)+"\\")
-
-	for _, line := range unformatted {
-		textFormatted = append(textFormatted, getCatOffset(catOffset)+"| "+line+getSpacesMissing(line, longestCharLen)+" |")
-	}
-
-	textFormatted = append(textFormatted, getCatOffset(catOffset)+"\\"+getLinesToText(longestCharLen)+"/")
-
-	return textFormatted
+	fmt.Println()
 }
 
 func Read() string {
