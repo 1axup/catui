@@ -12,10 +12,12 @@ cat := Cat {
   Icon: "cat1" // Icon Name
   IsBot: false // change to preferred mode
 }
+
+cat.Say("Meow")
 ```
 
 To get  user input
 
 ``` go
-catui.Read() // returns a string
+important_words := catui.Read() // returns a string
 ```
