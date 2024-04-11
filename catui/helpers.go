@@ -1,17 +1,42 @@
 package catui
 
-func catify(input []string) []string {
+import "strings"
+
+func catify(input []string, cat Cat) []string {
 	baseIndex := len(input)
+
+	catSymbol := cat.getSymbolArray()
 
 	if baseIndex < 3 {
 		return []string{}
 	}
 
-	input[(baseIndex - 3)] = swapIt(input[(baseIndex-3)], "/\\___/\\    ")
-	input[(baseIndex - 2)] = swapIt(input[(baseIndex-2)], "|* . *|   /")
-	input[(baseIndex - 1)] = swapIt(input[(baseIndex-1)], "\\_____/ \\/ ")
+	input[(baseIndex - 3)] = swapIt(input[(baseIndex-3)], catSymbol[0])
+	input[(baseIndex - 2)] = swapIt(input[(baseIndex-2)], catSymbol[1])
+	input[(baseIndex - 1)] = swapIt(input[(baseIndex-1)], catSymbol[2])
 
 	return input
+}
+
+func makeBubbleArray(text string) []string {
+
+	textFormatted := []string{}
+
+	unformatted := strings.Split(text, "\n")
+
+	longestCharLen := findLongestLine(unformatted)
+
+	catOffset := 11 // TODO: THIS IS BULLSHIT
+
+	textFormatted = append(textFormatted, getCatOffset(catOffset)+"/"+getLinesToText(longestCharLen)+"\\")
+
+	for _, line := range unformatted {
+		textFormatted = append(textFormatted, getCatOffset(catOffset)+"| "+line+getSpacesMissing(line, longestCharLen)+" |")
+	}
+
+	textFormatted = append(textFormatted, getCatOffset(catOffset)+"\\"+getLinesToText(longestCharLen)+"/")
+
+	return textFormatted
 }
 
 func swapIt(input string, swapText string) string {

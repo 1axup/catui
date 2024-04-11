@@ -8,7 +8,7 @@ func main() {
 	cat1 := catui.Cat{
 		Name:  "Kitty",
 		Icon:  "cat1",
-		IsBot: false,
+		IsBot: true,
 	}
 
 	cat1.Say("Hello,\nKitty friend!\nLorem ipsum")
