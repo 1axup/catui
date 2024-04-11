@@ -40,7 +40,7 @@ func PrintCat() {
 func (cat Cat) Say(toSay string) {
 	//fmt.Printf("%s: %s\n", cat.Name, toSay)
 
-	arr := makeBubbleArray(toSay)
+	arr := makeBubbleArray(toSay, cat.getSymbolSize())
 	arr = catify(arr, cat)
 
 	for _, line := range arr {

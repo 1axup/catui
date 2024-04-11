@@ -18,15 +18,10 @@ func catify(input []string, cat Cat) []string {
 	return input
 }
 
-func makeBubbleArray(text string) []string {
-
+func makeBubbleArray(text string, catOffset int) []string {
 	textFormatted := []string{}
-
 	unformatted := strings.Split(text, "\n")
-
 	longestCharLen := findLongestLine(unformatted)
-
-	catOffset := 11 // TODO: fix this limit
 
 	textFormatted = append(textFormatted, getCatOffset(catOffset)+"/"+getLinesToText(longestCharLen)+"\\")
 
@@ -84,13 +79,15 @@ func getLinesToText(len int) string {
 	return str
 }
 
-func getCatOffset(offset int) string {
+func (cat Cat) getSymbolSize() int {
+	return findLongestLine(cat.getSymbolArray())
+}
 
+func getCatOffset(offset int) string {
 	str := ""
 	// create header line
 	for i := 0; i < offset; i++ {
 		str += " "
 	}
-
 	return str
 }
