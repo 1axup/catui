@@ -23,9 +23,9 @@ func InitScreen() {
 }
 
 func (cat Cat) Meow() {
-	fmt.Println(" /--------------\\")
-	fmt.Println(" | Hello Friend |")
-	fmt.Println(" \\--------------/")
+	fmt.Println(" /--------\\")
+	fmt.Println(" | Meow! |")
+	fmt.Println(" \\-------/")
 	printCat()
 }
 
