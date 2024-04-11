@@ -17,7 +17,7 @@ func (cat Cat) getSymbolArray() []string {
 	} else {
 		symbol = append(symbol, "/-----\\    ")
 		symbol = append(symbol, "| @ @ |   /")
-		symbol = append(symbol, "\\-----/ \\/ ")
+		symbol = append(symbol, "\\-----/ \\/ \a")
 	}
 
 	return symbol

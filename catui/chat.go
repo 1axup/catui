@@ -46,6 +46,7 @@ func (cat Cat) Say(toSay string) {
 	for _, line := range arr {
 		fmt.Println(line)
 	}
+
 	fmt.Println()
 }
 
