@@ -47,9 +47,7 @@ func swapIt(input string, swapText string) string {
 	inputBytes := []byte(input)
 	swapBytes := []byte(swapText)
 
-	for i := 0; i < len(swapBytes); i++ {
-		inputBytes[i] = swapBytes[i]
-	}
+	copy(inputBytes, swapBytes)
 
 	return string(inputBytes)
 }
