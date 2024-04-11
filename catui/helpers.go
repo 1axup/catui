@@ -26,7 +26,7 @@ func makeBubbleArray(text string) []string {
 
 	longestCharLen := findLongestLine(unformatted)
 
-	catOffset := 11 // TODO: THIS IS BULLSHIT
+	catOffset := 11 // TODO: fix this limit
 
 	textFormatted = append(textFormatted, getCatOffset(catOffset)+"/"+getLinesToText(longestCharLen)+"\\")
 
