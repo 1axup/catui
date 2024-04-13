@@ -4,7 +4,7 @@ Chat TUI interface for Go Projects with cats
 
 ## Current usage
 
-To print something to the console
+To print something to the console:
 
 ``` go
 cat := Cat {
